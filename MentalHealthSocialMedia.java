@@ -24,23 +24,26 @@ public class MentalHealthSocialMedia {
         
         for (int i = 0; i < header.length; i++){
             if (header[i].equals("Stress_Level(1-10)")){
-                exerciseIndex = i;
-            } else if (header[i].equals("Exercise_Frequency(week)")){
                 stressIndex = i;
+            } else if (header[i].equals("Exercise_Frequency(week)")){
+                exerciseIndex = i;
             }
         }
 
         //2. Initialize an array of ArrayList integers with the length of 8 (index 0 = exercised 0 times per week, 1 - exercised once per week, etc) → stressList
-        ArrayList <Integer> [] stressList = new ArrayList <Integer> [8];
+        ArrayList<Double> [] stressList = new ArrayList[8];
+        for (int i = 0; i < stressList.length; i++) {
+            stressList[i] = new ArrayList<Double>();
+        }
 
         //3. Go through each line of the file (while there’s a line remaining):
         while (s.hasNextLine()){
             //a. Split up the line into an array of strings using → line 
             String [] line = s.nextLine().split(",");
             //b. Use line[exerciseIndex] to find the frequency of exercise → exFreq
-            int exFreq = Integer.parseInt(line[exerciseIndex]);
+            int exFreq = (int)Double.parseDouble(line[exerciseIndex]);
             //c. Access the value of stress levels using line[stressIndex] --> stressLevel
-            int stressLevel = Integer.parseInt(line[stressIndex]);
+            double stressLevel = Double.parseDouble(line[stressIndex]);
             //d. Add each of the stress level values to the arraylist at the index (freq) in stressList using .add()
             stressList[exFreq].add(stressLevel);
 
@@ -53,7 +56,7 @@ public class MentalHealthSocialMedia {
             double temp = 0.0;
             //b. Use a nested for loop to set each value of correlation to the sum of all values of stressList[i] 
             for (int j = 0; j < stressList[i].size(); j++){
-                temp = temp + (double)(stressList[i].get(j));
+                temp = temp + stressList[i].get(j);
             }
             //divide by the number of values in the arrayList to get the average
             double avg = temp / (double)(stressList[i].size());
@@ -63,7 +66,7 @@ public class MentalHealthSocialMedia {
         //5. Iterate through correlation and print it out using a visual (eg 2.899 is displayed as 3 stars) and print a concluding sentence
         System.out.print("Stress Levels");
         for (int i = 0; i < correlation.length; i++){
-            System.ouit.print("|");
+            System.out.print("|");
             for (int j = 0; j < Math.round(correlation[i]); j++){
                 System.out.print("*");
             }
