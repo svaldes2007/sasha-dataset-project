@@ -7,11 +7,11 @@ import java.util.Scanner;
 public class MentalHealthSocialMedia {
 
     public static void main (String args []) throws FileNotFoundException {
-
+        exerciseVersusStress();
     
     }
 
-    public static void doesPluribusWin() throws FileNotFoundException {
+    public static void exerciseVersusStress() throws FileNotFoundException {
         //​​1. Grab the first line of the file (the header) and split into and array of strings using .split()
         File f = new File("/Users/svaldes/Desktop/sasha-dataset-project/Mental_Health_and_Social_Media_Balance_Dataset.csv");
         Scanner s = new Scanner(f);
@@ -56,11 +56,20 @@ public class MentalHealthSocialMedia {
                 temp = temp + (double)(stressList[i].get(j));
             }
             //divide by the number of values in the arrayList to get the average
-            double avg = temp / (double)(j);
+            double avg = temp / (double)(stressList[i].size());
             correlation[i] = avg;
         }
 
-    //     5. Iterate through correlation and print it out using a visual (eg 2.899 is displayed as 3 stars) and print a concluding sentence
+        //5. Iterate through correlation and print it out using a visual (eg 2.899 is displayed as 3 stars) and print a concluding sentence
+        System.out.print("Stress Levels");
+        for (int i = 0; i < correlation.length; i++){
+            System.ouit.print("|");
+            for (int j = 0; j < Math.round(correlation[i]); j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        System.out.print("___________ Weekly Exersise Frequency");
 
     }
 }
