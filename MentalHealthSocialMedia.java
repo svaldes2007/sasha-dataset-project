@@ -47,13 +47,19 @@ public class MentalHealthSocialMedia {
         }
 
         //4. Use a for loop to find the average of the contents of each arraylist in stressList
-        for (int i = 0; i < )
+        //a. Initialize a double array → correlation
+        double [] correlation = new double [8];
+        for (int i = 0; i < stressList.length; i++){
+            double temp = 0.0;
+            //b. Use a nested for loop to set each value of correlation to the sum of all values of stressList[i] 
+            for (int j = 0; j < stressList[i].size(); j++){
+                temp = temp + (double)(stressList[i].get(j));
+            }
+            //divide by the number of values in the arrayList to get the average
+            double avg = temp / (double)(j);
+            correlation[i] = avg;
+        }
 
-   
-    //     
-    //     Initialize a double array → correlation
-    //     Use a nested for loop to set each value of correlation to the sum of all values of stressList[i] 
-    //     divide by the number of values in the arrayList to get the average
     //     5. Iterate through correlation and print it out using a visual (eg 2.899 is displayed as 3 stars) and print a concluding sentence
 
     }
