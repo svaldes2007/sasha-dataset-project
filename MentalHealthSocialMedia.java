@@ -64,15 +64,18 @@ public class MentalHealthSocialMedia {
         }
 
         //5. Iterate through correlation and print it out using a visual (eg 2.899 is displayed as 3 stars) and print a concluding sentence
-        System.out.print("Stress Levels");
+        System.out.println();
+        System.out.println("Stress Levels v Weekly Exersise Frequency");
         for (int i = 0; i < correlation.length; i++){
-            System.out.print("|");
+            System.out.print( String.valueOf(i) + ": ");
             for (int j = 0; j < Math.round(correlation[i]); j++){
                 System.out.print("*");
             }
             System.out.println();
         }
-        System.out.print("___________ Weekly Exersise Frequency");
+        System.out.println("The more stars next to the frequency, the higher the stress levels.");
+        System.out.println("Contrary to popular belief, people who rarely exercise and those who exercise nearly every day experience less stress than those who exercise a few times a week.");
+        System.out.println("");
 
     }
 }
