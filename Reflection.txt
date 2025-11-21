@@ -1,0 +1,23 @@
+Sasha Dataset Project Reflection
+
+1.  
+
+a. Since social media is new, I was interested how its use affected people’s quality of life. In general, I think it's really interesting to see how people’s habits shape how they experience life. I thought this dataset would have some interesting data on how people's stress levels correlate with their habits such as their social media use and exercise frequency. 
+
+b. This dataset is artificially generated using a python program which simulates the expected effects of each of the variables on the others. The rest of the questions below are answered based on the hypothetical scenario that this data was collected from real people. Since it’s computer generated, the data and therefore the conclusions drawn from it are meaningless. However, that is very boring to read. 
+
+c. I ended up exploring my first first question about the effect of exercise frequency on stress levels. As an athlete, I get a lot of stress relief from sports and was wondering if this was a universal experience.  
+
+2. 
+
+a. I answered this question by comparing the stress levels of each individual to how many days per week they exercise. To do this, I extracted data for each participant's stress levels (quantized from 1-10) and how many days per week they exercise. Then I sorted the stress levels into an array based on the exercise frequency. So if the person exercised twice per week, their numerical stress level would be added to an arrayList at the index 2 in the array. Then I averaged the values and printed them in a bar chart to help visualize the results. 
+
+b. I struggled with implementing the array of arrayLists so I looked at online documentation and met with Ms. Bono. Together, we worked through the bugs. 
+
+3.
+
+a. Surprisingly, the data showed that exercise frequency has a very small effect on stress levels. However, people who exercise 0-2 days per week and people who exercise 6 or more times a week are slightly less stressed than those who exercise 3-5 times per week. This was very surprising to me. Clearly, this means that I should not exercise to live a happier, less stressed life. Just kidding. 
+
+b. Some limitations of my research are that the participants are between the ages of 16 and 49, meaning that the data does not consider the experiences of people over 49 and under 16, which is a large segment of the population. 
+
+c. I would love to explore how exercise impacts sleep quality as well as stress levels. 
